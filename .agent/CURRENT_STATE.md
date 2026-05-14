@@ -1,0 +1,37 @@
+# Current State
+
+- Repo initialized with project documentation only.
+- React + TypeScript + Vite scaffold created manually.
+- Tailwind CSS configured.
+- Basic router and UI placeholder created.
+- Dependencies installed successfully.
+- Production build validated successfully.
+- Master build instructions updated with GitHub/Cloudflare deployment and local build workflow directives.
+- Firebase Auth Google sign-in flow implemented with Firebase client integration.
+- Username claim flow and onboarding persistence implemented using Firestore.
+- Profile, feed, community, inbox, and chat routing scaffolded with placeholder UIs.
+- Real-time chat service layer added with Firestore conversation and message helpers.
+- PWA support added with `manifest.json`, service worker, offline fallback page, and app icons.
+- Local Firebase env setup documented in README and `.env.example`.
+- Architecture documentation file added under `.agent/ARCHITECTURE.md`.
+- **Live public feed implemented** — post creation, real-time Firestore listener, like button.
+- **Inbox enriched** — shows partner display name, username, and last message preview.
+- **Admin dashboard implemented** — user list with suspend/unsuspend controls, guarded by `VITE_ADMIN_EMAILS`.
+- `postService.ts` and `adminService.ts` added to `src/lib/`.
+- `Post` type added to `src/types/post.ts`.
+- `VITE_ADMIN_EMAILS` documented in `.env.example`.
+- Build verified clean (64 modules, 0 TypeScript errors).
+- Node.js, npm, and Git confirmed installed on local machine.
+- Project dependencies installed via `npm install`.
+- Firebase project created with Google Auth and Firestore enabled.
+- `.env` file created and configured with Firebase credentials and admin email.
+- Dev server verified running at localhost:5173.
+- Production build verified clean locally.
+- GitHub repo created but code not yet pushed.
+- Cloudflare Pages setup pending (waiting on GitHub push).
+- **Code-splitting implemented** — all pages converted to `React.lazy` + `Suspense` in App.tsx. Bundle now splits into per-page chunks (1–5 kB each).
+- **Communities wired to real Firestore data** — `communityService.ts` added; CommunityPage supports create, join, leave with live listener.
+- **Events module implemented** — `eventService.ts`, `EventsPage.tsx`, `src/types/event.ts`; create events, RSVP, real-time listener.
+- **Polls module implemented** — `pollService.ts`, `PollsPage.tsx`, `src/types/poll.ts`; create polls, vote with live result bars.
+- **Firestore security rules written** — `firestore.rules` covers users, usernames, posts, communities, events, polls, conversations, messages, admin_audit_logs, notifications.
+- Build verified clean: 70 modules, 0 TypeScript errors.

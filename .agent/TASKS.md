@@ -1,0 +1,27 @@
+# Tasks
+
+- [x] Initialize frontend scaffold and core project files.
+- [x] Install dependencies and verify build.
+- [x] Add Firebase Auth and Google sign-in flow.
+- [x] Add username claim and onboarding flow.
+- [x] Add profile, feed, and community modules.
+- [x] Add messaging and real-time features (1:1 DM, inbox with partner names + last message).
+- [x] Add live public feed with post creation and likes.
+- [x] Add admin dashboard with user list and suspend/unsuspend.
+- [x] Add PWA packaging.
+- [x] Add code-splitting / lazy routes (bundle now per-page chunks via React.lazy).
+- [x] Add communities/groups with real Firestore data (create, join, leave, live listener).
+- [x] Add events module (create, RSVP, real-time listener).
+- [x] Add polls module (create, vote, live result bars).
+- [x] Add Firestore security rules (`firestore.rules`) — deployed and live.
+- [x] Add activity hub scaffold (books, movies, reels, series, music, games, podcasts).
+- [x] Add Cloudflare R2 upload Worker (workers/r2-upload/) + frontend uploadService + useUpload hook.
+- [x] Add WebRTC 1:1 calling (CallPage, callService, RTDB signaling).
+- [x] Add Realtime Database security rules (database.rules.json) — deployed and live.
+- [x] Switch media uploads to Cloudinary free tier (no credit card required).
+- [ ] Set up Cloudinary account and add VITE_CLOUDINARY_* vars to .env.
+- [ ] Add VITE_FIREBASE_DATABASE_URL to .env file.
+- [ ] Add backup/export to Google Drive / OneDrive.
+- [ ] Add Android TWA packaging instructions.
+- [ ] Add Firebase custom claims for proper admin role enforcement.
+- [ ] Push code to GitHub and complete Cloudflare Pages deployment.
