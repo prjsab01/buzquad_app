@@ -2,7 +2,9 @@
   "relation": ["delegate_permission/common.handle_all_urls"],
   "target": {
     "namespace": "android_app",
-    "package_name": "dev.pages.buzquad.app",
-    "sha256_cert_fingerprints": ["REPLACE_WITH_YOUR_SHA256_FINGERPRINT_AFTER_BUILDING_APK"]
+    "package_name": "dev.buzquadapp.twa",
+    "sha256_cert_fingerprints": [
+      "8E:1E:23:C2:56:C7:C6:9C:C6:88:41:B9:CE:AB:10:32:CC:B9:93:CC:B7:26:E8:14:E7:EC:67:18:CE:A0:02:AD"
+    ]
   }
 }]
