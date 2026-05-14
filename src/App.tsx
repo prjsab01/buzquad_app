@@ -15,6 +15,8 @@ const BackupPage = lazy(() => import('./pages/BackupPage'));
 const PollsPage = lazy(() => import('./pages/PollsPage'));
 const ProfilePage = lazy(() => import('./pages/ProfilePage'));
 
+const APK_URL = import.meta.env.VITE_APK_DOWNLOAD_URL as string | undefined;
+
 function HomePage() {
   return (
     <section className="mx-auto max-w-5xl p-6">
@@ -30,6 +32,21 @@ function HomePage() {
           Product vision
         </Link>
       </div>
+      {APK_URL && (
+        <div className="mt-6 rounded-2xl border border-slate-200 bg-slate-50 p-5">
+          <p className="text-sm font-semibold text-slate-900">📱 Android App</p>
+          <p className="mt-1 text-sm text-slate-600">
+            Download the Buzquad Android app (APK). Enable "Install from unknown sources" in your Android settings before installing.
+          </p>
+          <a
+            href={APK_URL}
+            download
+            className="mt-3 inline-flex items-center gap-2 rounded-xl bg-slate-900 px-5 py-2.5 text-sm text-white hover:bg-slate-700"
+          >
+            ⬇ Download APK
+          </a>
+        </div>
+      )}
     </section>
   );
 }

@@ -15,13 +15,14 @@
 - [x] Add polls module (create, vote, live result bars).
 - [x] Add Firestore security rules (`firestore.rules`) — deployed and live.
 - [x] Add activity hub scaffold (books, movies, reels, series, music, games, podcasts).
-- [x] Add Cloudflare R2 upload Worker (workers/r2-upload/) + frontend uploadService + useUpload hook.
 - [x] Add WebRTC 1:1 calling (CallPage, callService, RTDB signaling).
 - [x] Add Realtime Database security rules (database.rules.json) — deployed and live.
 - [x] Switch media uploads to Cloudinary free tier (no credit card required).
-- [ ] Set up Cloudinary account and add VITE_CLOUDINARY_* vars to .env.
-- [ ] Add VITE_FIREBASE_DATABASE_URL to .env file.
-- [ ] Add backup/export to Google Drive / OneDrive.
-- [ ] Add Android TWA packaging instructions.
+- [x] Set up Cloudinary account — cloud name dodnawj9q, preset buzquad_unsigned.
+- [x] Add VITE_FIREBASE_DATABASE_URL, VITE_CLOUDINARY_* to .env.
+- [x] Add backup/export flows (JSON + HTML, local download + Google Drive).
+- [x] Push code to GitHub — commit ea79d24, Cloudflare Pages auto-deploy triggered.
+- [ ] Verify Cloudflare Pages deployment succeeds and add Firebase Auth authorized domain.
+- [ ] Add Android TWA packaging instructions (Bubblewrap).
 - [ ] Add Firebase custom claims for proper admin role enforcement.
-- [ ] Push code to GitHub and complete Cloudflare Pages deployment.
+- [ ] Add VITE_GOOGLE_OAUTH_CLIENT_ID for Google Drive backup (optional).

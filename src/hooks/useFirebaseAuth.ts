@@ -9,12 +9,19 @@ import { firebaseAuth, googleProvider } from '../lib/firebase';
 
 export function useFirebaseAuth() {
   const [user, setUser] = useState<User | null>(null);
+  const [isAdmin, setIsAdmin] = useState(false);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(firebaseAuth, (firebaseUser) => {
+    const unsubscribe = onAuthStateChanged(firebaseAuth, async (firebaseUser) => {
       setUser(firebaseUser);
+      if (firebaseUser) {
+        const token = await firebaseUser.getIdTokenResult();
+        setIsAdmin(token.claims['admin'] === true);
+      } else {
+        setIsAdmin(false);
+      }
       setLoading(false);
     });
 
@@ -48,6 +55,7 @@ export function useFirebaseAuth() {
 
   return {
     user,
+    isAdmin,
     loading,
     error,
     signInWithGoogle,

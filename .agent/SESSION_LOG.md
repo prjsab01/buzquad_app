@@ -224,3 +224,36 @@ Build clean. RTDB rules live. Worker code written but not yet deployed (needs wr
 - CallPage chunk is 179 kB because firebase/database is co-bundled — acceptable for a lazy route
 - Worker uses multipart/form-data proxy pattern (not presigned URLs) — simpler and works on free tier
 - Image compression: client-side WebP conversion at 82% quality, max 1280px before upload
+
+## 2025-07-14 (Backup + GitHub push)
+
+### Completed
+- src/lib/backupService.ts — fetch profile + all conversations/messages from Firestore, export as JSON or HTML, local download or Google Drive upload via OAuth popup
+- src/pages/BackupPage.tsx — scope selector (all/profile/messages), format selector (JSON/HTML), destination selector (download/Drive), status feedback, Drive link on success
+- Added /backup route and nav link to App.tsx
+- Updated .env.example with VITE_GOOGLE_OAUTH_CLIENT_ID (optional, for Drive backup)
+- Switched media uploads from Cloudflare R2 to Cloudinary (no credit card required)
+- Cleaned up duplicate VITE_FIREBASE_DATABASE_URL in .env
+- Committed and pushed 67 files to GitHub (commit ea79d24)
+- Cloudflare Pages auto-deploy triggered
+
+### Modified Files
+- src/lib/backupService.ts (new)
+- src/pages/BackupPage.tsx (new)
+- src/App.tsx (BackupPage route + nav)
+- src/lib/uploadService.ts (rewritten for Cloudinary)
+- .env (cleaned up duplicate)
+- .env.example (added Cloudinary + Google OAuth vars)
+
+### Current Status
+Build clean: 1792 modules, 0 errors. All code on GitHub. Pages deployment in progress.
+
+### Next Recommended Step
+1. Verify Cloudflare Pages deployment succeeds
+2. Add Firebase Auth authorized domain for Pages URL
+3. Android TWA packaging with Bubblewrap
+
+### Notes
+- Google Drive backup uses implicit OAuth flow (token in URL hash) — works without a backend
+- Drive backup requires VITE_GOOGLE_OAUTH_CLIENT_ID which needs a Google Cloud OAuth 2.0 client
+- Download-to-device backup works with zero additional setup

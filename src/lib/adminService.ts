@@ -12,6 +12,7 @@ import type { UserProfile } from '../types/user';
 
 export interface AdminUser extends UserProfile {
   suspended?: boolean;
+  isAdmin?: boolean;
 }
 
 export async function listUsers(pageLimit = 50): Promise<AdminUser[]> {
