@@ -1,0 +1,30 @@
+bub_pswd=your-bub-password e.g.Bzq@123
+
+
+Alias name: buzquad
+Creation date: May 14, 2026
+Entry type: PrivateKeyEntry
+Certificate chain length: 1
+Certificate[1]:
+Owner: CN=Buzquad, OU=Unknown, O=Buzquad, L=Unknown, ST=Unknown, C=IN
+Issuer: CN=Buzquad, OU=Unknown, O=Buzquad, L=Unknown, ST=Unknown, C=IN
+Serial number: 6dc497c7e16418fe
+Valid from: Thu May 14 12:27:18 IST 2026 until: Mon Sep 29 12:27:18 IST 2053
+Certificate fingerprints:
+         SHA1: 3D:6B:42:BD:75:D3:1A:8C:05:9C:A5:98:8A:58:07:0F:48:8C:67:DE
+         SHA256: 8E:1E:23:C2:56:C7:C6:9C:C6:88:41:B9:CE:AB:10:32:CC:B9:93:CC:B7:26:E8:14:E7:EC:67:18:CE:A0:02:AD
+Signature algorithm name: SHA256withRSA
+Subject Public Key Algorithm: 2048-bit RSA key
+Version: 3
+
+Extensions: 
+
+#1: ObjectId: 2.5.29.14 Criticality=false
+SubjectKeyIdentifier [
+KeyIdentifier [
+0000: 10 55 DE 70 06 3C BD 8E   87 DD 73 62 66 5B 29 62  .U.p.<....sbf[)b
+0010: FF F4 3F 33                                        ..?3
+]
+]
+
+PS C:\buzquad-twa> 

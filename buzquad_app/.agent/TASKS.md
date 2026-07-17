@@ -1,0 +1,81 @@
+# Tasks
+
+- [x] Initialize frontend scaffold and core project files.
+- [x] Install dependencies and verify build.
+- [x] Add Firebase Auth and Google sign-in flow.
+- [x] Add username claim and onboarding flow.
+- [x] Add profile, feed, and community modules.
+- [x] Add messaging and real-time features (1:1 DM, inbox with partner names + last message).
+- [x] Add live public feed with post creation and likes.
+- [x] Add admin dashboard with user list and suspend/unsuspend.
+- [x] Add PWA packaging.
+- [x] Add code-splitting / lazy routes (bundle now per-page chunks via React.lazy).
+- [x] Add communities/groups with real Firestore data (create, join, leave, live listener).
+- [x] Add events module (create, RSVP, real-time listener).
+- [x] Add polls module (create, vote, live result bars).
+- [x] Add Firestore security rules — deployed and live.
+- [x] Add activity hub scaffold (books, movies, reels, series, music, games, podcasts).
+- [x] Add WebRTC 1:1 calling (CallPage, callService, RTDB signaling).
+- [x] Add Realtime Database security rules — deployed and live.
+- [x] Switch media uploads to Cloudinary free tier (no credit card required).
+- [x] Add backup/export flows (JSON + HTML, local download + Google Drive).
+- [x] Push code to GitHub — Cloudflare Pages deployed and live at buzquad-app.pages.dev.
+- [x] Add Android TWA packaging instructions (ANDROID_PACKAGING.md).
+- [x] Add Firebase custom claims Worker (workers/admin-claims/).
+- [x] Add isAdmin from Firebase custom claims to useFirebaseAuth hook.
+- [x] Add APK download button to landing page.
+- [x] Add Digital Asset Links file — updated with real SHA256 fingerprint, pushed.
+- [x] Build Android APK — app-release-signed.apk built at C:\buzquad-twa\.
+- [x] Add in-app notifications (unread counts, mention/reply/follow notifications).
+- [x] Add presence and typing indicators using RTDB.
+- [x] Add follow/unfollow system with notification triggers.
+- [x] Add public profile view via ?uid= query param.
+- [x] Add search page (users, posts, communities).
+- [x] Add settings and privacy settings pages.
+- [x] Fix Firestore rules (follows, friend_requests, conversations members field, notifications write).
+- [x] Add friend request flow (send/accept/reject/cancel + notifications).
+- [x] Add community detail page (/communities/:id — posts, members, invite link).
+- [x] Add DM from profile page ("Message" button).
+- [x] Add event detail page (/events/:id — RSVP + discussion thread).
+- [x] Add image upload to feed posts (Cloudinary, 5 MB cap, preview).
+- [x] Add /profile/:username slug route.
+- [x] Add Help, Privacy, Terms static pages + footer.
+- [x] Add avatar/cover image upload to ProfilePage (edit mode).
+- [x] Add image/file upload in ChatRoomPage.
+- [x] Add community member display names in CommunityDetailPage sidebar.
+- [x] Add following feed (posts from followed users only).
+- [x] Add post comments/replies.
+- [x] Add report/hide post actions in feed.
+- [x] Add Firestore indexes for follows, friend_requests, notifications queries.
+- [x] Add group/channel tabs to CommunityPage (kind: community/group/channel).
+- [x] Add admin moderation queue (report queue, post takedown, audit log viewer).
+- [x] Add test suite — 31 tests passing (Vitest v2, 4 test files).
+- [x] Add seed/mock data script (scripts/seed.ts).
+- [x] Add emoji reactions on posts (§31 — toggleReaction, ReactionBar, quick-emoji picker).
+- [x] Add link previews (§37 — og-preview Worker, fetchLinkPreview, auto-detect in composer, stored on post).
+- [x] Add drafts (§34 — DraftsPage, localStorage auto-save, /drafts route).
+- [x] Add command palette (§40 — CommandPalette, K shortcut, G+H/C/A/E/M/N shortcuts).
+- [x] Add custom status (§33 — setUserStatus/listenToUserStatus in RTDB, status editor in ProfilePage).
+- [x] §42 Theme and appearance settings
+- [x] §43 Smart notifications and notification preferences
+- [x] §44 In-app search improvements (5 tabs, recent searches, no-results suggestions)
+- [x] §45 Kudos and community awards (wired to ProfilePage)
+- [x] §46 Content warnings and sensitive content controls
+- [x] §47 Spaces — persistent voice/activity rooms (RTDB, SpacesPage)
+- [x] §48 Profile portfolio and work showcase
+- [x] §49 Streaks — recordLoginStreak called on auth
+- [x] §50 Localization and i18n readiness (useTranslation, en.json)
+- [x] §51 Progressive disclosure (Getting started card, Basic/Advanced settings)
+- [x] §52 Offline-first improvements (upgraded SW, offline queue banner)
+- [x] §53 Deep linking and share targets (PostDetailPage, InvitePage, manifest share_target)
+- [x] §54 Lightweight AI-assist features (hashtag suggestions, More like this)
+- [x] §55 Community health and safety tools (auto-mod, moderation queue)
+- [x] §56 Event check-in and attendance tracking
+- [x] §57 Collaborative watchlist and shared shelves
+- [x] §58 Buzquad Wrapped — annual personal recap
+- [x] §32 Rich text editor — integrated into FeedPage, ChatRoomPage, NotesPage, CommunityDetailPage, EventDetailPage.
+- [x] Fix ProfilePage encoding artifacts + broken avatar label + cover image upload UI.
+- [x] Add Call button to ProfilePage.
+- [x] Fix SearchPage community links to /communities/:id.
+- [x] Add /help/shortcuts page (§40).
+- [x] Fix Firestore admin_audit_logs rules (allow write for signed-in users).

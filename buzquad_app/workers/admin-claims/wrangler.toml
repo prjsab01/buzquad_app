@@ -1,0 +1,10 @@
+name = "buzquad-admin-claims"
+main = "index.ts"
+compatibility_date = "2024-09-23"
+
+# All sensitive values must be set as secrets:
+# wrangler secret put FIREBASE_PROJECT_ID
+# wrangler secret put FIREBASE_CLIENT_EMAIL
+# wrangler secret put FIREBASE_PRIVATE_KEY
+# wrangler secret put ADMIN_EMAILS
+# wrangler secret put ALLOWED_ORIGIN

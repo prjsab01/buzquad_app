@@ -1,0 +1,102 @@
+{
+  "rules": {
+    // ── call rooms (WebRTC signaling) ────────────────────────────────────────
+    "call_rooms": {
+      "$roomId": {
+        // Room doc: only caller or callee can read; only caller can create.
+        ".read": "auth != null && (data.child('callerUid').val() === auth.uid || data.child('calleeUid').val() === auth.uid)",
+        ".write": "auth != null && (!data.exists() ? (newData.child('callerUid').val() === auth.uid) : (data.child('callerUid').val() === auth.uid || data.child('calleeUid').val() === auth.uid))",
+
+        "offer": {
+          ".read": "auth != null && (root.child('call_rooms').child($roomId).child('callerUid').val() === auth.uid || root.child('call_rooms').child($roomId).child('calleeUid').val() === auth.uid)",
+          ".write": "auth != null && root.child('call_rooms').child($roomId).child('callerUid').val() === auth.uid"
+        },
+        "answer": {
+          ".read": "auth != null && (root.child('call_rooms').child($roomId).child('callerUid').val() === auth.uid || root.child('call_rooms').child($roomId).child('calleeUid').val() === auth.uid)",
+          ".write": "auth != null && root.child('call_rooms').child($roomId).child('calleeUid').val() === auth.uid"
+        },
+        "callerCandidates": {
+          ".read": "auth != null && (root.child('call_rooms').child($roomId).child('callerUid').val() === auth.uid || root.child('call_rooms').child($roomId).child('calleeUid').val() === auth.uid)",
+          "$candidateId": {
+            ".write": "auth != null && root.child('call_rooms').child($roomId).child('callerUid').val() === auth.uid"
+          }
+        },
+        "calleeCandidates": {
+          ".read": "auth != null && (root.child('call_rooms').child($roomId).child('callerUid').val() === auth.uid || root.child('call_rooms').child($roomId).child('calleeUid').val() === auth.uid)",
+          "$candidateId": {
+            ".write": "auth != null && root.child('call_rooms').child($roomId).child('calleeUid').val() === auth.uid"
+          }
+        }
+      }
+    },
+
+    // ── incoming-call invites (caller writes to callee's path) ───────────────
+    "incoming_calls": {
+      "$uid": {
+        // Only the target can read/clear their own invites.
+        ".read": "auth != null && auth.uid === $uid",
+        // Anyone signed in can write an invite (caller); target can also write (e.g. to clear).
+        ".write": "auth != null && (auth.uid === $uid || newData.child('fromUid').val() === auth.uid || !newData.exists())"
+      }
+    },
+
+
+    // ── presence ─────────────────────────────────────────────────────────────
+    "presence": {
+      "$uid": {
+        ".read": "auth != null",
+        ".write": "auth != null && auth.uid === $uid",
+        ".validate": "newData.hasChildren(['online', 'lastSeen'])"
+      }
+    },
+
+    // ── typing indicators ─────────────────────────────────────────────────────
+    "typing": {
+      "$conversationId": {
+        "$uid": {
+          ".read": "auth != null",
+          ".write": "auth != null && auth.uid === $uid"
+        }
+      }
+    },
+
+    // ── custom status ─────────────────────────────────────────────────────────
+    "status": {
+      "$uid": {
+        ".read": "auth != null",
+        ".write": "auth != null && auth.uid === $uid"
+      }
+    },
+
+    // ── post views (analytics) ────────────────────────────────────────────────
+    "post_views": {
+      "$postId": {
+        "$uid": {
+          ".read": "auth != null",
+          ".write": "auth != null && auth.uid === $uid"
+        }
+      }
+    },
+
+    // ── §47 Spaces (persistent voice/activity rooms) ──────────────────────────
+    "spaces": {
+      "$communityId": {
+        ".read": "auth != null",
+        ".write": "auth != null",
+        "$spaceId": {
+          "participants": {
+            "$uid": {
+              ".write": "auth != null && auth.uid === $uid"
+            }
+          }
+        }
+      }
+    },
+
+    // ── deny everything else ──────────────────────────────────────────────────
+    "$other": {
+      ".read": false,
+      ".write": false
+    }
+  }
+}
